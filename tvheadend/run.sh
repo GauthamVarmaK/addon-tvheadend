@@ -15,8 +15,8 @@ if  [ "$(ls -A /config/tvheadend/wg++)" ]; then
 else
     bashio::log.info "[Webgrab+] No webgrab+ installation found - Installing webgrab+"
     cd /tmp  && \
-    wget http://www.webgrabplus.com/sites/default/files/download/SW/V2.1.0/WebGrabPlus_V2.1_install.tar.gz  && \
-    tar -xvf WebGrabPlus_V2.1_install.tar.gz && rm WebGrabPlus_V2.1_install.tar.gz  && \
+    wget http://webgrabplus.com/sites/default/files/download/SW/V3.1.0/WebGrabPlus_V3.1_install.tar.gz  && \
+    tar -xvf WebGrabPlus_V3.1_install.tar.gz && rm WebGrabPlus_V3.1_install.tar.gz  && \
     mv .wg++/ /config/tvheadend/wg++  && \
     cd /config/tvheadend/wg++  && \
     ./install.sh
