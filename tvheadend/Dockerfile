@@ -2,10 +2,6 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories
-
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 RUN /run.sh
