@@ -14,7 +14,7 @@ check_webgrabplus(){
 webgrabplus_install(){
     if apk update; then
         bashio::log.info '[Webgrab+] APK: Installing required packages.'
-        if apk add --no-cache --virtual .build-deps git=2.32.0-r0 mono=6.12.0.122-r1 --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing; then
+        if apk add --no-cache --virtual .build-deps git=2.30.2-r0 mono=6.12.0.122-r1 --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing; then
             bashio::log.info '[Webgrab+] Installing Webgrab+.'
             mkdir -p ~/.wg++
             ln -sf /config/tvheadend/wg++/guide.xml ~/.wg++/guide.xml
