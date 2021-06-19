@@ -1,7 +1,7 @@
 #!/usr/bin/env bashio
 
 bashio::log.info "[TVHeadend] Installing TVHeadend"
-apk update && apk add --no-cache tvheadend=4.2.8-r3 git=2.32.0-r0 mono=6.12.0.122-r1
+apk update && apk add --no-cache tvheadend=4.2.8-r3 git=2.32.0-r0 mono=6.12.0.122-r1 --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 mkdir -p /config/tvheadend/recordings
 
