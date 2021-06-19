@@ -51,7 +51,7 @@ streamlink_install () {
   bashio::log.info '[StreamLink] APK: Updating pkg list.'
   if apk update; then
     bashio::log.info '[StreamLink] APK: Installing required packages.'
-    if apk add --no-cache py3-pip && apk add --no-cache --virtual .build-deps gcc musl-dev; then
+    if apk upgrade && apk add --no-cache py3-pip && apk add --no-cache --virtual .build-deps gcc musl-dev; then
         bashio::log.info '[StreamLink] PIP3: Updating and installing required packages.'
         if ! pip3 install --no-cache --upgrade setuptools; then bashio::log.error '[StreamLink] PIP3: Error while upgrading setuptools.'; fi
         if ! pip3 install --no-cache streamlink; then bashio::log.error '[StreamLink] PIP3: Error while installing Streamlink.'; fi
