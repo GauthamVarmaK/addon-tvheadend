@@ -19,13 +19,13 @@ webgrabplus_install(){
             mkdir -p ~/.wg++
             ln -sf /config/tvheadend/wg++/guide.xml ~/.wg++/guide.xml
             cd /tmp  && \
-                wget http://webgrabplus.com/sites/default/files/download/SW/V3.1.0/WebGrabPlus_V3.1_install.tar.gz  && \
-                tar -xvf WebGrabPlus_V3.1_install.tar.gz && rm WebGrabPlus_V3.1_install.tar.gz  && \
+                wget http://webgrabplus.com/sites/default/files/download/SW/V3.2.0/WebGrabPlus_V3.2_install.tar.gz  && \
+                tar -xvf WebGrabPlus_V3.2_install.tar.gz && rm WebGrabPlus_V3.2_install.tar.gz  && \
                 mv .wg++/ /config/tvheadend/wg++  && cd /config/tvheadend/wg++  && ./install.sh
             rm -rf siteini.pack/  && \
-                git clone https://github.com/DeBaschdi/webgrabplus-siteinipack.git  && \
-                cp -R webgrabplus-siteinipack/siteini.pack/ siteini.pack  && \
-                cp siteini.pack/International/horizon.tv.* siteini.user/
+                wget http://webgrabplus.com/sites/default/files/download/ini/SiteIniPack_current.zip  && \
+                unzip SiteIniPack_current.zip && rm SiteIniPack_current.zip && \
+                cp siteini.pack/India/* siteini.user/
 
             wget -O /usr/bin/tv_grab_wg++ http://www.webgrabplus.com/sites/default/files/tv_grab_wg.txt  && \
                 chmod a+x /usr/bin/tv_grab_wg++
