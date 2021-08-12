@@ -25,8 +25,6 @@ webgrabplus_install(){
             rm -rf siteini.pack/  && \
                 wget http://webgrabplus.com/sites/default/files/download/ini/SiteIniPack_current.zip  && \
                 unzip SiteIniPack_current.zip && rm SiteIniPack_current.zip && \
-                cp -R SiteIniPack_current/siteini.pack/ siteini.pack  && \
-                rm -rf SiteIniPack_current/ && \
                 cp siteini.pack/India/* siteini.user/
 
             wget -O /usr/bin/tv_grab_wg++ http://www.webgrabplus.com/sites/default/files/tv_grab_wg.txt  && \
