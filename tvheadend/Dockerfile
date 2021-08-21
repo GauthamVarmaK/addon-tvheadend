@@ -9,21 +9,31 @@ RUN /run.sh
 RUN echo "Starting TVHeadend"
 ENTRYPOINT ["/usr/bin/tvheadend", "--firstrun", "-u", "root", "-g", "root", "-c", "/config/tvheadend"]
 
+# Build arguments
+ARG BUILD_ARCH
+ARG BUILD_DATE
+ARG BUILD_DESCRIPTION
+ARG BUILD_NAME
+ARG BUILD_REF
+ARG BUILD_REPOSITORY
+ARG BUILD_VERSION
+
 # Labels
 LABEL \
-    io.hass.name="TVHeadend" \
-    io.hass.description="TVHeadend Add-On" \
+    io.hass.name="${BUILD_NAME}" \
+    io.hass.description="${BUILD_DESCRIPTION}" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="https://github.com/GauthamVarmaK" \
-    org.label-schema.description="TVHeadend Home Assistant Add-On" \
-    org.label-schema.build-date=${BUILD_DATE} \
-    org.label-schema.name="TVHeadend" \
-    org.label-schema.name="Home Assistant Addon: TVHeadend ${BUILD_ARCH}" \
-    org.label-schema.schema-version="1.0" \
-    org.label-schema.url="https://github.com/GauthamVarmaK/addon-tvheadend" \
-    org.label-schema.usage="https://github.com/GauthamVarmaK/addon-tvheadend" \
-    org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/GauthamVarmaK/addon-tvheadend" \
-    org.label-schema.vendor="https://github.com/GauthamVarmaK"
+    maintainer="Gautham Varma K <43441192+GauthamVarmaK@users.noreply.github.com>" \
+    org.opencontainers.image.title="${BUILD_NAME}" \
+    org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
+    org.opencontainers.image.vendor="GauthamVarmaK" \
+    org.opencontainers.image.authors="Gautham Varma K <43441192+GauthamVarmaK@users.noreply.github.com>" \
+    org.opencontainers.image.licenses="MIT" \
+    org.opencontainers.image.url="https://github.com/GauthamVarmaK/addon-tvheadend" \
+    org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
+    org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
+    org.opencontainers.image.created=${BUILD_DATE} \
+    org.opencontainers.image.revision=${BUILD_REF} \
+    org.opencontainers.image.version=${BUILD_VERSION}
