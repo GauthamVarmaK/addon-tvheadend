@@ -10,8 +10,8 @@ RUN \
         tvheadend=4.2.8-r3 \
         py3-pip=20.3.4-r1 \
     && apk add --no-cache --virtual .build-deps \
-        musl-dev \
-        gcc  \
+        musl-dev=1.2.2-r3 \
+        gcc=10.3.1_git20210424-r2  \
     && pip3 install \
         --upgrade \
         --no-cache-dir \
