@@ -2,17 +2,21 @@ ARG BUILD_FROM
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+COPY requirements.txt /tmp/
+
 RUN \
     apk update \
     && apk add --no-cache \
         tvheadend=4.2.8-r3 \
-        py3-pip \
+        py3-pip=20.3.4-r1 \
     && apk add --no-cache --virtual .build-deps \
         musl-dev \
         gcc  \
-    && pip3 install --no-cache --upgrade \
-        setuptools \
-        streamlink \
+    && pip3 install \
+        --upgrade \
+        --no-cache-dir \
+        --prefer-binary \
+        -r /tmp/requirements.txt \
     && apk del --no-cache --purge .build-deps
 
 # Copy root filesystem
