@@ -12,10 +12,7 @@ RUN \
     && apk add --no-cache --virtual .build-deps \
         musl-dev=1.2.2-r3 \
         gcc=10.3.1_git20210424-r2  \
-        libxml2=2.9.12-r1 \
-        libxslt=1.1.34-r1 \
     && pip3 install \
-        --upgrade \
         --no-cache-dir \
         --prefer-binary \
         -r /tmp/requirements.txt \
