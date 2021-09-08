@@ -2,12 +2,21 @@ ARG BUILD_FROM
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-COPY run.sh /run.sh
-RUN chmod +x /run.sh
-RUN /run.sh
+RUN \
+    apk update \
+    && apk add --no-cache \
+        tvheadend=4.2.8-r3 \
+        py3-pip \
+    && apk add --no-cache --virtual .build-deps \
+        musl-dev \
+        gcc  \
+    && pip3 install --no-cache --upgrade \
+        setuptools \
+        streamlink \
+    && apk del --no-cache --purge .build-deps
 
-RUN echo "Starting TVHeadend"
-ENTRYPOINT ["/usr/bin/tvheadend", "--firstrun", "-u", "root", "-g", "root", "-c", "/config/tvheadend"]
+# Copy root filesystem
+COPY rootfs /
 
 # Build arguments
 ARG BUILD_ARCH

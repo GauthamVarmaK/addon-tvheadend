@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Home Assistant Community Add-on: TVHeadend
+# Runs the cron daemon
+# ==============================================================================
+exec fdmove -c 2 1 /usr/sbin/crond -f -L /var/log/cron -l 0 -c /etc/crontabs
