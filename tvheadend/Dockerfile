@@ -2,12 +2,29 @@ ARG BUILD_FROM
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-COPY run.sh /run.sh
-RUN chmod +x /run.sh
-RUN /run.sh
+COPY requirements.txt /tmp/
 
-RUN echo "Starting TVHeadend"
-ENTRYPOINT ["/usr/bin/tvheadend", "--firstrun", "-u", "root", "-g", "root", "-c", "/config/tvheadend"]
+RUN \
+    apk update \
+    && apk add --no-cache --virtual .build-deps \
+        musl-dev=1.2.2-r3 \
+        gcc=10.3.1_git20210424-r2 \
+        g++=10.3.1_git20210424-r2 \
+        libxml2-dev=2.9.12-r1 \
+        libxslt-dev=1.1.34-r1 \
+        python3-dev=3.9.5-r1 \
+    && apk add --no-cache \
+        tvheadend=4.2.8-r3 \
+        py3-pip=20.3.4-r1 \
+        libxslt=1.1.34-r1 \
+    && pip3 install \
+        --no-cache-dir \
+        --prefer-binary \
+        -r /tmp/requirements.txt \
+    && apk del --no-cache --purge .build-deps
+
+# Copy root filesystem
+COPY rootfs /
 
 # Build arguments
 ARG BUILD_ARCH

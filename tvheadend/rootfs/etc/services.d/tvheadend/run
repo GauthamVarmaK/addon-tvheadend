@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Home Assistant Community Add-on: TVHeadend
+# Starts TVHeadend
+# ==============================================================================
+
+bashio::log.info "Starting TVHeadend..."
+
+exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend

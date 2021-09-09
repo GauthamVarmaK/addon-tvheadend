@@ -1,0 +1,9 @@
+#!/usr/bin/env bashio
+# ==============================================================================
+# Home Assistant Community Add-on: TVHeadend
+# Restarts the add-on
+# ==============================================================================
+
+echo "Restarting add-on"
+
+bashio::addon.restart
