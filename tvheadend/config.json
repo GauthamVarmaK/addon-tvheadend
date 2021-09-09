@@ -22,7 +22,7 @@
     "system_packages": [],
     "init_commands": []
   },
-  "schema":{
+  "schema": {
     "system_packages": ["str"],
     "init_commands": ["str"]
   }
