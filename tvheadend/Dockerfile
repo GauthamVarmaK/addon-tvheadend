@@ -6,15 +6,17 @@ COPY requirements.txt /tmp/
 
 RUN \
     apk update \
+    && apk add --no-cache --virtual .build-deps \
+        musl-dev=1.2.2-r3 \
+        gcc=10.3.1_git20210424-r2 \
+        g++=10.3.1_git20210424-r2 \
+        libxml2-dev=2.9.12-r1 \
+        libxslt-dev=1.1.34-r1 \
+        python3-dev=3.9.5-r1 \
     && apk add --no-cache \
         tvheadend=4.2.8-r3 \
         py3-pip=20.3.4-r1 \
         libxslt=1.1.34-r1 \
-    && apk add --no-cache --virtual .build-deps \
-        musl-dev=1.2.2-r3 \
-        gcc=10.3.1_git20210424-r2 \
-        libc-dev=0.7.2-r3 \
-        libxslt-dev=1.1.34-r1 \
     && pip3 install \
         --no-cache-dir \
         --prefer-binary \
