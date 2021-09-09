@@ -5,7 +5,6 @@
   "slug": "tvheadend",
   "description": "TV streaming server and recorder.",
   "url": "https://github.com/GauthamVarmaK/addon-tvheadend",
-  "startup": "application",
   "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
   "webui": "http://[HOST]:[PORT:9981]/",
   "usb": true,
