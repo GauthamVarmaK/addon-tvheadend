@@ -48,12 +48,12 @@ Allows you to specify additional [Alpine packages][alpine-packages] to be instal
 
 ### Option: `init_commands`
 
-Customize your TVHeadend environment even more with the `init_commands` option. 
+Customize your TVHeadend environment even more with the `init_commands` option.
 Add one or more shell commands to the list, and they will be executed every single time this add-on starts.
 
 ## Additional Details
 
-- Raw USB would be mapped  `/dev/bus/usb` inside the addon.
+- Raw USB would be mapped `/dev/bus/usb` inside the addon.
 - Config files are stored in `/config/tvheadend/`
 - Recording files are stored in `/config/tvheadend/recordings/`
 
