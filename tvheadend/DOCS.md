@@ -17,7 +17,8 @@ Have included the following along with TVHeadend:
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Home Assistant add-on.
 
-1. Install "Gautham's Add-ons" in supervisor.
+1. Add this repository to have addons by GauthamVarmaK:  
+   [![Opens your Home Assistant instance and show the add add-on repository dialog with the repository URL pre-filled](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)][my-ha-add-repo]
 1. Search for the "TVHeadend" add-on in the Supervisor add-on store and install it.
 1. Start the "TVHeadend" add-on.
 1. Check the logs of the "TVHeadend" to see if everything went well.
@@ -26,11 +27,37 @@ comparison to installing any other Home Assistant add-on.
 
 ## Configuration
 
-No changes needed from the user, unless u need to change the ports.
+**Note**: _Remember to restart the add-on when the configuration is changed._
 
--Config files are stored in /config/tvheadend/
--Recording files are stored in /config/tvheadend/recordings/
-Consider, backing them up whenever migrating.
+Example add-on configuration:
+
+```yaml
+system_packages:
+  - ffmpeg
+init_commands:
+  - echo 'Hello World'
+```
+
+**Note**: _This is just an example, don't copy and paste it! Create your own!_
+
+### Option: `system_packages`
+
+Allows you to specify additional [Alpine packages][alpine-packages] to be installed to the TVHeadend Addon (e.g., `ffmpeg`, `g++`, etc. ).
+
+**Note**: _Adding many packages will result in a longer start-up time for the add-on._
+
+### Option: `init_commands`
+
+Customize your TVHeadend environment even more with the `init_commands` option. 
+Add one or more shell commands to the list, and they will be executed every single time this add-on starts.
+
+## Additional Details
+
+- Raw USB would be mapped  `/dev/bus/usb` inside the addon.
+- Config files are stored in `/config/tvheadend/`
+- Recording files are stored in `/config/tvheadend/recordings/`
+
+Consider, backing `/config/tvheadend/` up whenever migrating.
 
 ## Changelog & Releases
 
@@ -84,8 +111,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+[alpine-packages]: https://pkgs.alpinelinux.org/packages
 [forum]: https://community.home-assistant.io/
-[gautham]: https://github.com/GauthamVarmaK
 [frenck]: https://github.com/frenck
+[gautham]: https://github.com/GauthamVarmaK
 [issue]: https://github.com/GauthamVarmaK/addon-tvheadend/issues
+[semver]: http://semver.org/spec/v2.0.0.htm
+[my-ha-add-repo]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fmy.home-assistant.io%2Fredirect%2Fsupervisor_add_addon_repository%2F%3Frepository_url%3Dhttps%253A%252F%252Fgithub.com%252FGauthamVarmaK%252Fhassio-addons
 [releases]: https://github.com/GauthamVarmaK/addon-tvheadend/releases
