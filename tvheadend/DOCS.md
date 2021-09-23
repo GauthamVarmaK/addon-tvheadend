@@ -51,7 +51,7 @@ installed to the TVHeadend Addon (e.g., `ffmpeg`, `g++`, etc. ).
 
 Customize your TVHeadend environment even more with the `init_commands` option.
 Add one or more shell commands to the list, and they will be executed
- every single time this add-on starts.
+every single time this add-on starts.
 
 ## Additional Details
 
