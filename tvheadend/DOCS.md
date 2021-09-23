@@ -17,8 +17,8 @@ Have included the following along with TVHeadend:
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Home Assistant add-on.
 
-1. Add this repository to have addons by GauthamVarmaK:  
-   [![Opens your Home Assistant instance and show the add add-on repository dialog with the repository URL pre-filled](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)][my-ha-add-repo]
+1. Add this repository to have addons by GauthamVarmaK:
+   [![Home Assistant with repository URL pre-filled][my-ha-shield]][my-ha-repo]
 1. Search for the "TVHeadend" add-on in the Supervisor add-on store and install it.
 1. Start the "TVHeadend" add-on.
 1. Check the logs of the "TVHeadend" to see if everything went well.
@@ -42,14 +42,16 @@ init_commands:
 
 ### Option: `system_packages`
 
-Allows you to specify additional [Alpine packages][alpine-packages] to be installed to the TVHeadend Addon (e.g., `ffmpeg`, `g++`, etc. ).
+Allows you to specify additional [Alpine packages][alpine-packages] to be
+installed to the TVHeadend Addon (e.g., `ffmpeg`, `g++`, etc. ).
 
 **Note**: _Adding many packages will result in a longer start-up time for the add-on._
 
 ### Option: `init_commands`
 
 Customize your TVHeadend environment even more with the `init_commands` option.
-Add one or more shell commands to the list, and they will be executed every single time this add-on starts.
+Add one or more shell commands to the list, and they will be executed
+ every single time this add-on starts.
 
 ## Additional Details
 
@@ -115,7 +117,8 @@ SOFTWARE.
 [forum]: https://community.home-assistant.io/
 [frenck]: https://github.com/frenck
 [gautham]: https://github.com/GauthamVarmaK
+[my-ha-shield]: https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg
 [issue]: https://github.com/GauthamVarmaK/addon-tvheadend/issues
 [semver]: http://semver.org/spec/v2.0.0.htm
-[my-ha-add-repo]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fmy.home-assistant.io%2Fredirect%2Fsupervisor_add_addon_repository%2F%3Frepository_url%3Dhttps%253A%252F%252Fgithub.com%252FGauthamVarmaK%252Fhassio-addons
+[my-ha-repo]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fmy.home-assistant.io%2Fredirect%2Fsupervisor_add_addon_repository%2F%3Frepository_url%3Dhttps%253A%252F%252Fgithub.com%252FGauthamVarmaK%252Fhassio-addons
 [releases]: https://github.com/GauthamVarmaK/addon-tvheadend/releases
