@@ -55,7 +55,7 @@ every single time this add-on starts.
 
 ## Additional Details
 
-- Raw USB would be mapped `/dev/bus/usb` inside the addon.
+- `/dev/dvb/`, `/dev/dri/` would be respectively mapped to `/dev/dvb/`, `/dev/dri/` inside the addon.
 - Config files are stored in `/config/tvheadend/`
 - Recording files are stored in `/config/tvheadend/recordings/`
 
