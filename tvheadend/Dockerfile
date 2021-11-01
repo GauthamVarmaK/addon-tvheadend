@@ -12,7 +12,7 @@ RUN \
         g++=10.3.1_git20210424-r2 \
         libxml2-dev=2.9.12-r1 \
         libxslt-dev=1.1.34-r1 \
-        python3-dev=3.9.7-r3 \
+        python3-dev=3.9.5-r1 \
     && apk add --no-cache \
         tvheadend=4.2.8-r3 \
         py3-pip=20.3.4-r1 \
