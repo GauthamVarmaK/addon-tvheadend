@@ -58,7 +58,7 @@ every single time this add-on starts.
 - Config files are stored in `/config/tvheadend/`
 - Recording files are stored in `/config/tvheadend/recordings/`
 - `/dev/dvb/`, `/dev/dri/` would be respectively mapped to
- `/dev/dvb/`, `/dev/dri/` inside the addon.
+  `/dev/dvb/`, `/dev/dri/` inside the addon.
 
 Consider, backing `/config/tvheadend/` up whenever migrating.
 
