@@ -7,10 +7,7 @@
   "url": "https://github.com/GauthamVarmaK/addon-tvheadend",
   "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
   "webui": "http://[HOST]:[PORT:9981]/",
-  "devices": [
-    "/dev/dvb/",
-    "/dev/dri/"
-  ],
+  "devices": ["/dev/dvb/", "/dev/dri/"],
   "ports": {
     "9981/tcp": 9981,
     "9982/tcp": 9982
