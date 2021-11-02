@@ -139,13 +139,11 @@ jobs:
         uses: docker/setup-qemu-action@v1.2.0
       - name: 🏗 Set up Docker Buildx
         uses: docker/setup-buildx-action@v1.6.0
-      - name: 🏗 Set up CodeNotary
-        run: bash <(curl https://getvcn.codenotary.com -L)
       - name: ℹ️ Compose build flags
         id: flags
         run: |
           echo "::set-output name=date::$(date +"%Y-%m-%dT%H:%M:%SZ")"
-          from=$(jq --raw-output ".build_from.${{ matrix.architecture }}" "${{ needs.information.outputs.build }}")
+          from=$(yq --no-colors eval ".build_from.${{ matrix.architecture }}" "${{ needs.information.outputs.build }}")
           echo "::set-output name=from::${from}"
 
           if [[ "${{ matrix.architecture}}" = "amd64" ]]; then
