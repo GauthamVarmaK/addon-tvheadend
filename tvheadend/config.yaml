@@ -3,14 +3,14 @@ version: dev
 stage: experimental
 slug: tvheadend
 description: TV streaming server and recorder.
-url: 'https://github.com/GauthamVarmaK/addon-tvheadend'
+url: "https://github.com/GauthamVarmaK/addon-tvheadend"
 arch:
   - aarch64
   - amd64
   - armhf
   - armv7
   - i386
-webui: 'http://[HOST]:[PORT:9981]/'
+webui: "http://[HOST]:[PORT:9981]/"
 devices:
   - /dev/dvb/
   - /dev/dri/
@@ -21,7 +21,7 @@ ports_description:
   9981/tcp: TVH Web Interface
   9982/tcp: TVH HTSP
 map:
-  - 'config:rw'
+  - "config:rw"
 options:
   system_packages: []
   init_commands: []
