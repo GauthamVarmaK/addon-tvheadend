@@ -94,7 +94,7 @@ This has been possible thanks to the community add-ons initiative by [Frenck][fr
 
 MIT License
 
-Copyright (c) 2021 GauthamVarmaK
+Copyright (c) 2021-2022 GauthamVarmaK
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
