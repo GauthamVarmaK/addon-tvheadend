@@ -1,2 +1,2 @@
-setuptools==60.7.1
+setuptools==60.10.0
 streamlink==3.2.0
