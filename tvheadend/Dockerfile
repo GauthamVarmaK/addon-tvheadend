@@ -10,13 +10,13 @@ RUN \
         musl-dev=1.2.2-r7 \
         gcc=10.3.1_git20211027-r0 \
         g++=10.3.1_git20211027-r0 \
-        libxml2-dev=2.9.12-r2 \
-        libxslt-dev=1.1.34-r1 \
+        libxml2-dev=2.9.13-r0 \
+        libxslt-dev=1.1.35-r0 \
         python3-dev=3.9.7-r4 \
     && apk add --no-cache \
         tvheadend=4.2.8-r5 \
         py3-pip=20.3.4-r1 \
-        libxslt=1.1.34-r1 \
+        libxslt=1.1.35-r0 \
     && pip3 install \
         --no-cache-dir \
         --prefer-binary \
