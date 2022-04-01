@@ -5,6 +5,7 @@ stage: experimental
 slug: tvheadend
 description: TV streaming server and recorder.
 url: "https://github.com/GauthamVarmaK/addon-tvheadend"
+init: false
 arch:
   - aarch64
   - amd64
