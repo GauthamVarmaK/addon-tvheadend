@@ -14,9 +14,9 @@ webgrabplus_install(){
         if apk add --no-cache --virtual .build-deps git mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing; then
             bashio::log.info '[Webgrab+] Installing Webgrab+.'
             cd /tmp \
-            && wget http://webgrabplus.com/sites/default/files/download/SW/V3.2.0/WebGrabPlus_V3.2_install.tar.gz  \
-            && tar -zxvf WebGrabPlus_V3.2_install.tar.gz \
-            && rm WebGrabPlus_V3.2_install.tar.gz  \
+            && wget http://webgrabplus.com/sites/default/files/download/SW/V3.3.0/WebGrabPlus_V3.3_install.tar.gz  \
+            && tar -zxvf WebGrabPlus_V3.3_install.tar.gz \
+            && rm WebGrabPlus_V3.3_install.tar.gz  \
             && mv .wg++/ /config/tvheadend/wg++  \
             && cd /config/tvheadend/wg++  \
             && ./install.sh \
