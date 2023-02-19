@@ -1,9 +1,10 @@
-#!/usr/bin/execlineb -S0
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
 # ==============================================================================
 # Home Assistant Community Add-on: TVHeadend
-# Take down the S6 supervision tree when TVHeadend fails
+# Starts TVHeadend
 # ==============================================================================
-if -n { s6-test $# -ne 0 }
-if -n { s6-test ${1} -eq 256 }
 
-s6-svscanctl -t /var/run/s6/services
+bashio::log.info "Starting TVHeadend..."
+
+exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend
