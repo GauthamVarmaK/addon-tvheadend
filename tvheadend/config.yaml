@@ -32,3 +32,4 @@ schema:
     - str
   init_commands:
     - str
+host_network: true
