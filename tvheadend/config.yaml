@@ -4,7 +4,7 @@ version: dev
 stage: experimental
 slug: tvheadend
 description: TV streaming server and recorder.
-url: "https://github.com/GauthamVarmaK/addon-tvheadend"
+url: "https://github.com/afedchin/addon-tvheadend"
 init: false
 arch:
   - aarch64
@@ -32,3 +32,4 @@ schema:
     - str
   init_commands:
     - str
+host_network: true

@@ -15,6 +15,7 @@ RUN \
         python3-dev=3.10.10-r0 \
     && apk add --no-cache \
         tvheadend=4.2.8-r6 \
+        oscam=1.20_svn20201119-r4 \
         py3-pip=22.3.1-r1 \
         libxslt=1.1.37-r0 \
     && pip3 install \
@@ -42,13 +43,13 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Gautham Varma K <43441192+GauthamVarmaK@users.noreply.github.com>" \
+    maintainer="afedchin <2063885+afedchin@users.noreply.github.com.>" \
     org.opencontainers.image.title="${BUILD_NAME}" \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
-    org.opencontainers.image.vendor="GauthamVarmaK" \
-    org.opencontainers.image.authors="Gautham Varma K <43441192+GauthamVarmaK@users.noreply.github.com>" \
+    org.opencontainers.image.vendor="afedchin" \
+    org.opencontainers.image.authors="afedchin <2063885+afedchin@users.noreply.github.com.>" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.url="https://github.com/GauthamVarmaK/addon-tvheadend" \
+    org.opencontainers.image.url="https://github.com/afedchin/addon-tvheadend" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
