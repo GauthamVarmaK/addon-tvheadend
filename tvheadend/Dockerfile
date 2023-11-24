@@ -7,24 +7,21 @@ COPY requirements.txt /tmp/
 RUN \
     apk update \
     && apk add --no-cache --virtual .build-deps \
-        musl-dev=1.2.3-r4 \
-        gcc=12.2.1_git20220924-r4 \
-        g++=12.2.1_git20220924-r4 \
-        libxml2-dev=2.10.3-r1 \
-        libxslt-dev=1.1.37-r0 \
-        python3-dev=3.10.10-r0 \
-RUN \ 
-     apk add --no-cache \
+        musl-dev=1.2.4_git20230717-r4 \
+        gcc=13.2.1_git20231014-r0 \
+        g++=13.2.1_git20231014-r0 \
+        libxml2-dev=2.11.6-r0 \
+        libxslt-dev=1.1.39-r0 \
+        python3-dev=3.11.6-r1 \
+    && apk add --no-cache \
         tvheadend=4.2.8-r6 \
-        py3-pip=22.3.1-r1 \
-        libxslt=1.1.37-r0 \
-RUN \
-     pip3 install \
+        py3-pip=23.3.1-r0 \
+        libxslt=1.1.39-r0 \
+    && pip3 install \
         --no-cache-dir \
         --prefer-binary \
         -r /tmp/requirements.txt \
-RUN \
-    apk del --no-cache --purge .build-deps
+    && apk del --no-cache --purge .build-deps
 
 # Copy root filesystem
 COPY rootfs /
