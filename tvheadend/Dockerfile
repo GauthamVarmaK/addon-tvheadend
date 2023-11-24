@@ -7,7 +7,7 @@ COPY requirements.txt /tmp/
 RUN \
     apk update \
     && apk add --no-cache --virtual .build-deps \
-        musl-dev=1.2.3-r4 \
+        musl-dev=1.2.3-r5 \
         gcc=12.2.1_git20220924-r4 \
         g++=12.2.1_git20220924-r4 \
         libxml2-dev=2.10.4-r0 \
