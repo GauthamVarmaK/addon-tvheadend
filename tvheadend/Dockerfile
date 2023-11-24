@@ -6,8 +6,7 @@ COPY requirements.txt /tmp/
 
 RUN \
     apk update \
-RUN \
-    apk add --no-cache --virtual .build-deps \
+    && apk add --no-cache --virtual .build-deps \
         musl-dev=1.2.3-r4 \
         gcc=12.2.1_git20220924-r4 \
         g++=12.2.1_git20220924-r4 \
