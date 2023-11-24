@@ -4,7 +4,11 @@
 # Home Assistant Community Add-on: TVHeadend
 # Starts TVHeadend
 # ==============================================================================
+declare args
 
 bashio::log.info "Starting TVHeadend..."
 
-exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend
+args=$(bashio::config 'args')
+bashio::log.info "Additional args ${args}"
+
+exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend "$args" 
